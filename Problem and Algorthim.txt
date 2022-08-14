@@ -1,0 +1,31 @@
+Problem Statement : Create a 10^7 random vectors with size of 100 dimensions.Find the 10 nearest points to given query point.
+
+Brute Force : Generate the 10^7 random vectors and generate the random query vector.Iterate the entire data to find 10 nearest points to given query point.
+
+My Approach : Make a KD-Tree with generated random points and search for the nearest elements in that KD-Tree.
+
+Pseudocode for finding 1 nearest point:
+    
+    Node nearstOne(Node root,Vector queryPoint,int dep):
+        if(root==NULL) return NULL
+        if(queryPoint[dep%100] < root.point[dep%100]){
+                first=root.left
+                second=root.right
+        }
+        else{
+                first=root.right
+                second=root.left
+        }
+        Node temp = nearstOne(first,queryPoint,dep+1)
+        Node best = closeOf(queryPoint,temp,root) // using distance function we check which one is closes to temp or root
+        
+	      long long int   radius=distance(queryPoint,first->point) // finding the distance between two points
+	      long dis = point[depth%k]-root->point[depth%k]
+	      if(radius>=dis*dis){
+		          temp=near(second,queryPoint,depth+1)
+		          best=closest(queryPoint,temp,best)
+        }
+	      return best
+        
+    
+    There is no time left that's why i explained very low :-(. 
