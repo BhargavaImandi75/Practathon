@@ -35,15 +35,6 @@ struct Node *insert(Node *root, int point[])
 {
     return insertRec(root, point, 0);
 }
-  
-  
-long long int TotalNodes(Node* root)
-{
-    if (root == NULL)
-        return 0;
-    return 1 + TotalNodes(root->left)
-           + TotalNodes(root->right);
-}
 long long int  dist(int x[],int y[]){
 	long long int d=0;
 	for(int i=0;i<l;i++){
