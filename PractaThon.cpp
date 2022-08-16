@@ -82,8 +82,7 @@ int main()
 {
     struct Node *root = NULL,*temp=NULL;
     int points[100];
-    priority_queue<pair<long long int, int[100]> > priorityq;
-    for(long long int i=0;i<5;i++){
+    for(long long int i=0;i<10000000;i++){
     	for(int j=0;j<l;j++){
     		points[j]=rand()%201 - 100;
 		}
